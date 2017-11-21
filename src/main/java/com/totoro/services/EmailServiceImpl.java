@@ -35,6 +35,7 @@ import java.util.Set;
 
 @Service
 public class EmailServiceImpl implements EmailService {
+
     private static final Logger logger = LoggerFactory.getLogger(EmailServiceImpl.class);
     private static final int CONNECT_TIMEOUT = 3000;
     private final SendGridHttpConfiguration sendGridHttpConfig;
@@ -84,7 +85,7 @@ public class EmailServiceImpl implements EmailService {
 
         int responseCode = conn.getResponseCode();
         // The following redirect handling is very simple - I don't expect it to happen because normally redirect happens from http to https and also I don't expect the provider to change the url endpoint
-        // Handle 301 or 302 - If the url has been marked as 301 or 302 then let the personal responsible know
+        // Handle 301 or 302 - If the url has been marked as 301 or 302 then let the persona responsible know
         if (responseCode == HttpURLConnection.HTTP_MOVED_PERM || responseCode == HttpURLConnection.HTTP_MOVED_TEMP) {
             // TODO: Send a notification to the person responsible
             String message = "The request gets redirected, this is not supported yet so please check and update the url accordingly in the config - redirected url: " + conn.getHeaderField("Location");
