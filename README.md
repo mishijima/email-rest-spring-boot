@@ -4,7 +4,7 @@
 This application acts as an abstraction between 2 email providers.
 It supports a failover from one provider to the other by doing a simple health check on the providers.  
 
-This application uses MailGun and SendGrid as its providers, please refer to for more information on their APIs
+This application uses MailGun and SendGrid as its providers, please refer to the following for more information on their APIs
 
 * https://sendgrid.com/docs/API_Reference/Web_API_v3/index.html
 * https://documentation.mailgun.com/en/latest/user_manual.html#sending-via-api
