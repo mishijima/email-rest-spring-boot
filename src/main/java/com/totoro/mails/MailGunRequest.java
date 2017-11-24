@@ -33,12 +33,12 @@ public class MailGunRequest extends MailRequest {
 
         if (bcc != null && bcc.length > 0) {
             for (String recipient : bcc) {
-                sb.append("&cc=").append(URLEncoder.encode(recipient, StandardCharsets.UTF_8.name()));
+                sb.append("&bcc=").append(URLEncoder.encode(recipient, StandardCharsets.UTF_8.name()));
             }
         }
 
         sb.append("&subject=").append(URLEncoder.encode(subject, StandardCharsets.UTF_8.name()));
-        sb.append("&text=").append(URLEncoder.encode(subject, StandardCharsets.UTF_8.name()));
+        sb.append("&text=").append(URLEncoder.encode(text, StandardCharsets.UTF_8.name()));
 
         return sb.toString();
     }
